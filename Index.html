@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximize Your Forex Earnings</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 30px;
+            background: linear-gradient(to bottom, #121212, #1e1e1e, #292929);
+            border-radius: 20px;
+            box-shadow: 6px 6px 20px rgba(0,0,0,0.6);
+            text-align: center;
+            color: white;
+        }
+        img {
+            max-width: 450px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        label, input {
+            display: block;
+            margin-bottom: 12px;
+            width: 80%;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        input {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: #333;
+            color: white;
+            font-size: 1.2rem;
+        }
+        button {
+            background: #ff9800;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 80%;
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 2rem;
+            color: #ffcc00;
+            background: #333;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0px 4px 10px rgba(255, 204, 0, 0.6);
+        }
+        .account-button {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #007bff;
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 85%;
+            font-size: 1.6rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.6);
+        }
+        .promo-text {
+            margin-top: 10px;
+            font-size: 1.3rem;
+            color: #ffd700;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.1;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="LOGO_PRINCIPAL_V2.png" alt="One Code Capital Logo">
+    <h2>Build your Freedom</h2>
+
+    <div class="form-container">
+        <label>Deposits ($):</label>
+        <input type="number" id="deposits" placeholder="Enter total deposits" min="0">
+    
+        <label>Withdrawals ($):</label>
+        <input type="number" id="withdrawals" placeholder="Enter total withdrawals" min="0">
+    
+        <label>Lots Traded:</label>
+        <input type="number" id="lots" placeholder="Enter lots traded" min="0">
+    
+        <label>Commission per Lot ($):</label>
+        <input type="number" id="commissionPerLot" placeholder="Enter commission per lot" min="0">
+    
+        <button onclick="calculate()">Calculate Result</button>
+    </div>
+
+    <div id="result"></div>
+
+    <a href="https://occ.track360.io/Tracking/S/677fd8b3d00658e46e53185f" class="account-button" target="_blank">Open Your Account Now</a>
+
+    <p class="promo-text">
+        Open your account today and take advantage of this unique opportunity.
+        
+        Join One Code Capital and boost your earnings in the financial market.
+        
+        The more you share, the more you earn!
+    </p>
+
+    <script>
+        function calculate() {
+            let deposits = parseFloat(document.getElementById("deposits").value) || 0;
+            let withdrawals = parseFloat(document.getElementById("withdrawals").value) || 0;
+            let lots = parseFloat(document.getElementById("lots").value) || 0;
+            let commissionPerLot = parseFloat(document.getElementById("commissionPerLot").value) || 0;
+    
+            if (deposits < 0 || withdrawals < 0 || lots < 0 || commissionPerLot < 0) {
+                alert("Please enter valid values for all fields.");
+                return;
+            }
+    
+            let netDeposit = deposits - withdrawals;
+            let totalCommission = lots * commissionPerLot;
+            let partnerCommission = totalCommission * 0.5;
+            let finalResult = (netDeposit * 0.05) + partnerCommission;
+    
+            document.getElementById("result").innerHTML = `Partner result: $${finalResult.toFixed(2)}`;
+          
+        }
+    </script>
+</body>
+</html>
